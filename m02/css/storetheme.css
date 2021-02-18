@@ -1,0 +1,21 @@
+:root {
+	--color-body: #111;
+	--color-main: #5454bb;
+	--color-main-dark: #1c1c6f;
+	--color-main-light: #9292f3;
+}
+
+body {
+	color: var(--color-body);
+	background-color: var(--color-neutral-light);
+}
+
+a {
+	color: var(--color-main);
+}
+
+
+.flex-spacer {
+	flex: none;
+	width: 1em;
+}
