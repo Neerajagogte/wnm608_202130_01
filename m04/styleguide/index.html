@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>CSS style Guide</title>
+
+	<link rel="stylesheet" type="text/css" href="../lib/css/gridsystem.css">
+	<link rel="stylesheet" type="text/css" href="../lib/css/styleguide.css">
+	<link rel="stylesheet" type="text/css" href="../css/storetheme.css">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<header class="container">
+		<h1>CSS Style Guide</h1>
+	</header>
+
+	<nav class="nav">
+		<ul>
+			<li><a href="#typography">Typography</a></li>
+			<li><a href="#images">Images</a></li>
+			<li><a href="#cards">Cards</a></li>
+			<li><a href="#viewwindow">View Window</a></li>
+			<li><a href="#navs">Navs</a></li>
+			<li><a href="#tables">Tables</a></li>
+			<li><a href="#forms">Forms</a></li>
+			<li><a href="#grid">Grid</a></li>
+			<li><a href="#flex">Flex</a></li>
+		</ul>
+	</nav>
+
+	<section id="navs">
+		<script>
+
+		const makeNav = (classes='') => {
+			const links = ["home", "store", "about"];
+			let ran = Math.floor(Math.random()*links.length);
+			return `
+			<div class="card card-light">
+				<nav class="${classes}">
+					<ul>
+						${links.reduce((r,o,i)=>r+`<li ${i==ran&&
+						`class="active"`}><a href="#">${o}
+						</a></li>`,"")}
+					</ul>
+				</nav>
+			</div>`;
+		}
+		</script>
+		<div class="container">
+			<p>Navigations are cool.</p>
+
+			<h3>Unstyled</h3>
+			<script>document.write(makeNav(""));</script>
+
+			<h3>Default</h3>
+			<p>Default is for default styling, which is vertical.
+			</p>
+			<script>document.write(makeNav("nav"));</script>
+
+			<h3>NavFlex</h3>
+			<p>Horizontal styling can be added.</p>
+			<script>document.write(makeNav("nav-flex"));</script>
+
+			<h3>Nav Pills</h3>
+			<script>document.write(makeNav("nav-pills"));</script>
+
+			<h3>Nav Stretch</h3>
+			<script>document.write(makeNav("nav-stretch"));</script>
+
+			<h3>Nav Crumbs</h3>
+			<script>document.write(makeNav("nav-crumbs"));</script>
+
+			<h3>Nav Material</h3>
+			<script>document.write(makeNav("nav-material"));</script>
+
+			<h3>Nav Tabs</h3>
+			<script>document.write(makeNav("nav-tabs"));</script>
+
+		</div>
+
+		<script>
+			$(()=> {
+				$("[class*='nav'] a").on("click",function(e){
+					console.log("honk")
+					e.preventDefault();
+					$(this).closest("li").addClass("active")
+						.siblings().removeClass("active");
+				})
+			})
+
+		</script>
+	</section>
+
+	<section id="tables">
+		<script>
+			const makeTable = (classes='') => {
+				const head = ["id", "nanme", "email", "phone"];
+				const body = [
+						[1,"Hamilton", "hammy@gmail.com","555-2424"],
+						[2,"Neeraja", "neeraja@gmail.com", "312-7654"],
+						[3,"Hamilton", "hammy@gmail.com","555-2424"],
+						[4,"Neeraja", "neeraja@gmail.com", "312-7654"],
+						[5,"Hamilton", "hammy@gmail.com","555-2424"],
+						[6,"Neeraja", "neeraja@gmail.com", "312-7654"]
+				];
+				return`
+				<div class="container">
+					<div class="card card-light">
+						<table class="${classes}">
+							<thead>
+								<tr>${head.reduce((r,o)=>r+`<th>${o}</th>`,"")}
+								</tr>
+							</thead>
+							<tbody>${body.reduce((r,o)=>r+`<tr>${o.reduce((r,o)=>r+`<td>${o}</td>`,"")}</tr>`,"")}
+							</tbody>
+						</table>
+					</div>
+				</div>`;
+			}
+		</script>
+
+		<div class="card card-medium card-flat">
+			<div class="container">
+				<h2>Tables</h2>
+			</div>
+		</div>
+			<div class="container">
+				<p>Tables are cool.</p>
+
+				<h3>Unstyled</h3>
+				<script>document.write(makeTable(""));</script>
+
+				<h3>Basic Table</h3>
+				<script>document.write(makeTable("table"));</script>
+
+				<h3>Striped</h3>
+				<script>document.write(makeTable("table striped"));</script>
+
+				<h3>Lined Horizontal</h3>
+				<script>document.write(makeTable("table lined horizontal"));</script>
+
+				<h3>Lined Vertical</h3>
+				<script>document.write(makeTable("table lined vertical"));</script>
+
+				<h3>Lined Inner</h3>
+				<script>document.write(makeTable("table lined vertical horizontal"));</script>
+
+				<h3>Lined Outer</h3>
+				<script>document.write(makeTable("table lined outer"));</script>
+
+				<h3>Lined All</h3>
+				<script>document.write(makeTable("table lined all"));</script>
+
+				<h3>Lined Striped</h3>
+				<script>document.write(makeTable("table lined outer striped"));</script>
+			</div>
+	</section>
+
+	<section id="forms">
+		<div class="card card-medium card-flat">
+			<div class="container">
+				<h2>Forms</h2>
+			</div>
+		</div>
+		<div class="container">
+			<p>Forms are cool</p>
+			<h3>Input</h3>
+
+			<div class="card card-light">
+				<input type="text" class="form-input" placeholder="Input">
+			</div>
+
+			<h3>Select</h3>
+
+			<div class="card card-light">
+				<div class="form-select">
+					<select name="amount">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+					</select>
+				</div>
+			</div>
+			<h3>Checkboxes</h3>
+
+			<div class="card card-light">
+				<div>
+					<input type="Checkbox" id="checkmark-1" class="hidden">
+					<label for="checkmark-1" class="checkmark">
+					</label>
+				</div>
+				<div>
+					<input type="Checkbox" id="toggle-1" class="hidden">
+					<label for="toggle-1" class="toggle">
+					</label>
+				</div>
+				<div>
+					<input type="Checkbox" id="toggle-2" class="hidden">
+					<label for="toggle-2" class="toggle" style="font-size: 2em">
+					</label>
+				</div>
+			</div>
+
+			<h3>Radio Groups</h3>
+			<div class="card card-light">
+				<div>
+					<input type="radio" id="radio-2-1" class="hidden" name="radio-2">
+					<label for="radio-2-1" class="radio-group"></label>
+					<input type="radio" id="radio-2-2" class="hidden" name="radio-2">
+					<label for="radio-2-2" class="radio-group"></label>
+					<input type="radio" id="radio-2-3" class="hidden" name="radio-2">
+					<label for="radio-2-3" class="radio-group"></label>
+				</div>
+			</div>
+			<h3>Buttons</h3>
+
+			<div class="card card-light">
+				<div class="grid gap">
+					<div class="col-xs-12 col-md-3">
+						<input type="button" class="form-button" value="Input">
+					</div>
+					<div class="col-xs-12 col-md-3">
+						<input type="submit" class="form-button" value="Submit">
+					</div>
+					<div class="col-xs-12 col-md-3">
+						<button type="submit" class="orm-button">Button</button>
+					</div>
+					<div class="col-xs-12 col-md-3">
+						<a href="#" class="form-button">Anchor</a>
+					</div>
+				</div>
+			</div>
+
+			<h3>Labels</h3>
+			<div class="card card-light">
+				
+				<label for="input-1" class="form-label">Input</label>
+				<input type="text" id="input-1" class="form-input" placeholder="Input">
+			</div>
+
+			<h3>Control</h3>
+
+			<div class="card card-light">
+				<div class="form-control">
+					<label for="input-1" class="form-label">Username</label>
+					<input type="text" id="input-1" class="form-input" placeholder="Input">
+				</div>
+				<div class="form-control">
+					<label for="input-2" class="form-label">Password</label>
+					<input type="text" id="input-2" class="form-input" placeholder="Password">
+				</div>
+			</div>
+
+			<h3>Hotdog</h3>
+
+			<div class="card card-light">
+				<input type="search" class="hotdog" placeholder="Search Hotdog">
+			</div>
+
+			<h3>Coloring</h3>
+
+			<div class="card card-light">
+				<div class="grid gap">
+					<div class="col-xs-12 col-md-4">
+						<button type="submit" class="form-button warning">Warning</button>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<button type="submit" class="form-button error">Error</button>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<button type="submit" class="form-button confirm">Confirm</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+</body>
+</html>
