@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>CSS style Guide for dessert shop</title>
+
+	<link rel="stylesheet" type="text/css" href="../lib/css/gridsystem.css">
+	<link rel="stylesheet" type="text/css" href="../lib/css/styleguide.css">
+	<link rel="stylesheet" type="text/css" href="../css/storetheme.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com"> 
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;500&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="typography">
+			<h4>Typography</h4>
+			<div class="headings">Headings</div>
+			<br>
+			<div class="subheadings">
+				<p>Sub Headings: Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Repellendus vitae porro laboriosam fugiat magni!</p></div>
+			<div class="productname">PRODUCT NAME</div>
+			
+			<div class="productdescription"><p>Product Description: Lorem ipsum, dolor sit amet consectetur</p></div>
+
+<br>
+<br>
+<hr>
+
+	<section id="navs">
+		<script>
+
+		const makeNav = (classes='') => {
+			const links = ["HOME", "ABOUT US", "PRODUCTS", "CONTACT"];
+			let ran = Math.floor(Math.random()*links.length);
+			return `
+			<div class="card card-light">
+				<nav class="${classes}">
+					<ul>
+						${links.reduce((r,o,i)=>r+`<li ${i==ran&&
+						`class="active"`}><a href="#">${o}
+						</a></li>`,"")}
+					</ul>
+				</nav>
+			</div>`;
+		}
+		</script>
+		<div class="container">
+			<h4>Navigation bar</h4>
+		</div>
+	
+			<script>document.write(makeNav("nav-pills"));</script>
+
+			<br>
+			<script>document.write(makeNav("nav-material"));</script>
+
+
+		
+
+		<script>
+			$(()=> {
+				$("[class*='nav'] a").on("click",function(e){
+					console.log("honk")
+					e.preventDefault();
+					$(this).closest("li").addClass("active")
+						.siblings().removeClass("active");
+				})
+			})
+
+		</script>
+	</section>
+
+
+		
+
+	<section id="forms">
+		
+		<div class="container">
+
+			
+			<h4>Checkboxes</h4>
+
+			<div class="card card-light">
+				<div>
+					<input type="Checkbox" id="checkmark-1" class="hidden">
+					<label for="checkmark-1" class="checkmark">
+					</label>
+				</div>
+			</div>
+
+
+			<h4>Buttons</h4>
+
+			<div class="card card-light">
+				<div class="grid gap">
+					<div class="col-xs-12 col-md-1">
+						<input type="button" class="form-button-1" value="Order">
+					</div>
+					<div class="col-xs-12 col-md-2">
+						<input type="submit" class="form-button-2" value="Add to cart">
+					</div>
+					<div class="col-xs-12 col-md-3">
+						<button type="submit" class="form-button-3">CHECKOUT</button>
+					</div>
+					
+				</div>
+			</div>
+
+
+
+			<h4>Search</h4>
+
+			<div class="card card-light">
+				<input type="search" class="hotdog" placeholder="Search Products">
+			</div>
+
+		
+			</div>
+		</div>
+
+	</section>
+	<div class="container">
+		<div class="card card-soft card-pink">
+			<div class="paragraph">
+				<h2>Important Section</h2>
+				<p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Repellendus vitae porro laboriosam fugiat magni! Aspernatur magnam asperiores sed suscipit voluptatum nemo, quisquam laudantium! Recusandae facere voluptates mollitia corporis asperiores voluptas.</p>
+				
+			</div>
+		</div>
+	</div>
+<br>
+<br>
+
+	<div class="container">
+		<div class="display-flex">
+			<div class="flex-stretch">
+				<div class="card card-aqua">
+					<h3 class="card-heading">Product Category 1</h3>
+					<div>
+						<p>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Beatae, nemo.</p>
+						<p>Voluptatum quam, adipisci sequi beatae totam vel quo amet excepturi!</p>
+						<p>Voluptatum quam, adipisci sequi beatae totam vel quo amet excepturi!</p>
+					</div>
+
+				</div>
+			</div>
+			<div class="flex-spacer"></div>
+			<div class="flex-stretch">
+				<div class="card card-aqua">
+					<h3 class="card-heading">Product Category 2</h3>
+					<div>
+						<p>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Beatae, nemo.</p>
+						<p>Voluptatum quam, adipisci sequi beatae totam vel quo amet excepturi!</p>
+						<p>Voluptatum quam, adipisci sequi beatae totam vel quo amet excepturi!</p>
+					</div>
+				</div>
+			</div>
+			<div class="flex-spacer"></div>
+			<div class="flex-stretch">
+				<div class="card card-aqua">
+					<h3 class="card-heading">Product Category 3</h3>
+					<div>
+						<p>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Beatae, nemo.</p>
+						<p>Voluptatum quam, adipisci sequi beatae totam vel quo amet excepturi!</p>
+						<p>Voluptatum quam, adipisci sequi beatae totam vel quo amet excepturi!</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<br>
+	<br>
+
+</body>
+</html>
