@@ -38,7 +38,9 @@ a{
 		text-decoration: underline;
 	}
 
-	.paragraph{color: white;}
+	.paragraph{color: white; font-weight: 300;}
+
+	.paragraph-black{color: black; font-weight: 300;}
 
 	.headings{font-family: 'Raleway', sans-serif;
 	font-weight: 500;
@@ -60,7 +62,9 @@ font-size: 50px;}
 
 .display-flex{display: flex;
 			margin-right: 100px;
-			margin-left: 100px;}
+			margin-left: 100px;
+			justify-content: center;}
+
 .display-block{display: block;}
 .display-inlineblock {display: inline-block;}
 
@@ -72,6 +76,8 @@ font-size: 50px;}
 	margin-left: auto;
 	margin-right: auto;
 }
+
+
 
 .overcrop {position: relative;
 	overflow: hidden;}
@@ -174,6 +180,7 @@ font-size: 50px;}
 			margin-bottom: 1em;
 		}
 
+
 		[class*='col-']>.card,
 		.flex-stretch>.card{
 			height: 100%;
@@ -195,6 +202,19 @@ font-size: 50px;}
 			background-color: #d1ede9;
 		}
 
+		.card-border{
+			
+			width: 100%;
+			border-radius: .5em;
+			background-color: white;
+			border-style: solid;
+			border-width: 2px;
+			border-color: #d1ede9;
+		}
+
+		.card-border:hover{box-shadow: 0 4px 18px 0 rgba(0,0,0,0.1);
+			cursor: pointer;}
+
 		.card-pink{
 			background-color: #ff00b3;
 			padding: 4em;
@@ -210,6 +230,8 @@ font-size: 50px;}
 			padding: 0;
 		}
 
+		.card-image{border-radius: 10px;}
+
 
 
 .view-window{
@@ -218,7 +240,7 @@ font-size: 50px;}
 	background-attachment: fixed;
 	position: relative;
 	overflow: hidden;
-	height: 50vh;
+	height: 70vh;
 	margin-top: 1em;
 	margin-bottom: 1em;
 
@@ -229,6 +251,11 @@ font-size: 50px;}
 	.view-windoww>:firsr-child{
 		max-height: calc(100% -4em);
 		max-width: calc(100% -4em);
+	}
+
+	.view-windoww img{
+		float: left;
+		padding-left: 20px;
 	}
 
 .image-full{
@@ -381,6 +408,27 @@ object-fit: cover;
 	cursor: pointer;
 	transition: box-shadow 0.3s, transform 0.6s;
 	background-color: var(--color-neutral-dark);
+}
+
+.form-button-4{
+	display: inline-block;
+	height: 50px;
+	padding: 0.5em 1em;
+	margin: 0;
+	font: inherit;
+	-webkit-appearance: none;
+	border-style: solid
+	border-width: .5px;
+	border-color: white;
+	border-radius: 6px;
+	outline: 0;
+	vertical-align: baseline;
+	color: white;
+	text-align: center;
+	text-decoration: none !important;
+	cursor: pointer;
+	transition: box-shadow 0.3s, transform 0.6s;
+	background-color: transparent;
 }
 
 .form-button-1:active {
