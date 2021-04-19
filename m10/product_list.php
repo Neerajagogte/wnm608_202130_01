@@ -15,7 +15,7 @@ $pageoffset = isset($_GET['page'])?$_GET['page']:0;
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Bag Store Product List</title>
+	<title>Furniture Store Product List</title>
 	<? include "parts/meta.php" ?>
 </head>
 <body>

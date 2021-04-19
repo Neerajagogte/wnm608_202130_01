@@ -5,6 +5,6 @@ function makeAuth() {
 		"neerajastore",   //username
 		"Raspberryparfait123",  //password
 		"neerajastore"  //database name
-		]
+		];
 }
 ?>

@@ -11,7 +11,7 @@ $product = getData("SELECT * FROM `products` WHERE `id` = {$_GET['id']}")[0];
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Bag Store Single item: <?= $product->title?></title>
+	<title>Furniture Store Single item: <?= $product->title?></title>
 
 	<? include "parts/meta.php" ?>
 </head>
