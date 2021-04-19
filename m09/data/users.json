@@ -1,0 +1,26 @@
+"users":[
+	{
+		"product_name":"Sofa",
+		"product_description": "This is a sectional sofa",
+		"technical_specs": ["77.55 inches","solid wood","reversible cushions"],
+		"price":499
+	},
+	{
+		"product_name":"Chair",
+		"product_description": "This is an accent chair",
+		"technical_specs": ["depth 21 inches","linen","weight capacity 250 lbs"],
+		"price":165
+	},
+	{
+		"product_name":"Beds",
+		"product_description": "This is a bolster dog bed",
+		"technical_specs": ["harbor blue colour","washable","rectangular"],
+		"price":30
+	}
+
+
+
+
+
+
+]
