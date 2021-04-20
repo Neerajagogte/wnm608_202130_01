@@ -4,7 +4,7 @@ function productListTemplate($r,$o) {
 	<div class = "col-xs-6 col-md-4 col-lg-3">
 	<a href="product_item.php?id=$o->id" class="product-item card card-soft card-light card-flat">
 	<div class="image-square">
-		<img src="/images/store/$o->thumbnai" alt="">
+		<img src="/images/store/$o->main_image" alt="">
 	</div>
 	<div class="product-description">
 		<div>$o->title</div>
@@ -23,7 +23,7 @@ return $r.<<<HTML
 	<div class="flex-none" style="width:6em;">
 	<a href="product_item.php?id=$o->id" class="display-block">
 		<div class="image-square">
-			<img src="/images/store/$o->thumbnail" alt="">
+			<img src="/images/store/$o->main_image" alt="">
 		</div>
 	</a>
 	</div>

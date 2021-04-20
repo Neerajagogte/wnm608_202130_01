@@ -2,9 +2,9 @@
 function makeAuth() {
 	return[
 		"localhost",    //database host location name
-		"neerajastore",   //username
+		"neerajashop",   //username
 		"Raspberryparfait123",  //password
-		"neerajastore"  //database name
+		"neerajashop"  //database name
 		];
 }
 ?>

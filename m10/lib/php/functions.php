@@ -29,13 +29,10 @@ function getData($sql) {
 	$arr = [];
 	while($row = $result->fetch_object()) $arr[] = $row;
 
-	$conn->close;
+	$conn->close();
 
 	return $arr;
 }
-
-
-
 
 
 

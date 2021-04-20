@@ -11,7 +11,7 @@
 	
 	<? include "parts/navbar.php" ?>
 
-	<div class="view-window hero" style="background-image: url(../img/hike.jpg);">
+	<div class="view-window hero" style="background-image: url(../images/store/hike.jpg);">
 		<h1>Featured products</h1>
 	</div>
 
