@@ -2,7 +2,7 @@
 session_start();
 
 function print_p($v) {
-	echo "<pre>",print_r($v), "</pre>";
+	echo "<pre>",print_r($v),"</pre>";
 }
 
 
@@ -24,7 +24,7 @@ function getData($sql) {
 
 	$result = $conn->query($sql);
 
-	if($conn->errno) die($conn->srror);
+	if($conn->errno) die($conn->error);
 
 	$arr = [];
 	while($row = $result->fetch_object()) $arr[] = $row;
@@ -33,6 +33,21 @@ function getData($sql) {
 
 	return $arr;
 }
+
+
+
+
+function file_get_json($filename) {
+	$file = file_get_contents($filename);
+	return json_decode($file);
+}
+
+
+
+
+
+
+
 
 
 

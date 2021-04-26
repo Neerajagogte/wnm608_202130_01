@@ -82,7 +82,7 @@ $product = getData("SELECT * FROM `products` WHERE `id` = {$_GET['id']}")[0];
 				</form>
 			</div>
 		</div>
-		<div class="card-vasic">
+		<div class="card-basic">
 			<div class="product-description">
 				<p><?= $product->description ?></p>
 			</div>

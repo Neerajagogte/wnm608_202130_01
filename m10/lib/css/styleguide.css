@@ -277,22 +277,32 @@ object-fit: cover;
 	max-width: 100%;
 	vertical-align: text-bottom;
 }
+.image-square, 
 .image-circle{
 	position: relative;
 	height: 0;
 	padding-bottom: 100%;
 }
+	.image-square img,
 	.image-circle img{
 		width: 100%;
 		height: 100%;
 		position: absolute;
-		top: 0;
-		left: 0;
+		top:0;
+		left:0;
 		object-fit: cover;
 		object-position: center;
-		border-radius: 50%;
 		vertical-align: text-bottom;
+
 	}
+
+	.image-circle img{
+		border-radius:50%;
+		padding: 30px;
+		border: 1px dashed var(--color-neutral-dark);
+	}
+
+	
 
 .center-child{
 	display: flex;

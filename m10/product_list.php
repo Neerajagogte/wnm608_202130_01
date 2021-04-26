@@ -1,18 +1,15 @@
 <?
-require_once "lib/php/functions.php";
-require_once "parts/template.php";
+require_once"lib/php/functions.php";
+require_once"parts/template.php";
 
 $pagelimit = 12;
 $pageoffset = isset($_GET['page'])?$_GET['page']:0;
 
-
 ?>
 
 
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<title>Furniture Store Product List</title>
@@ -20,7 +17,6 @@ $pageoffset = isset($_GET['page'])?$_GET['page']:0;
 </head>
 <body>
 	<? include "parts/navbar.php" ?>
-
 	<div class="container pad push-down">
 		<div class="grid gap xs-small md-medium product-list">
 			<?
@@ -34,10 +30,8 @@ $pageoffset = isset($_GET['page'])?$_GET['page']:0;
 			echo array_reduce($data,'productListTemplate');
 
 			?>
-
 		</div>
 	</div>
-
 
 </body>
 </html>
