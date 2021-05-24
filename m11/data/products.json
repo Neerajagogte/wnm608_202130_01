@@ -1,0 +1,23 @@
+{
+	"products":[
+	{
+		"product_name":"Chair",
+		"product_description": "This is aan accent chair",
+		"technical_specs": ["77.55 inches","solid wood","reversible cushions"],
+		"price":499
+	},
+	{
+		"product_name":"Ottoman",
+		"product_description": "This is an ottoman",
+		"technical_specs": ["depth 21 inches","linen","weight capacity 250 lbs"],
+		"price":165
+	},
+	{
+		"product_name":"Table",
+		"product_description": "This is a table",
+		"technical_specs": ["harbor blue colour","washable","rectangular"],
+		"price":30
+	}
+
+]
+}

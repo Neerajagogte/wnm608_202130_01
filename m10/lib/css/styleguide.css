@@ -27,7 +27,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 a{
-	display: inline-block;
 	color: inherit;
 	text-decoration: none;
 	font-weight: 700;
@@ -37,14 +36,28 @@ a{
 		text-decoration: underline;
 	}
 
+	section>h2 {
+		border-bottom: 1px dashed var(--color-neutral-dark);
+		padding: 3em 1rem 0.5em;
+	}
+
+	img {max-width: 100%;}
+
 /*standard classes*/
 
 .display-flex{display: flex;}
+.display-inline-flex{display: inline-flex;}
 .display-block{display: block;}
-.display-inlineblock {display: inline-block;}
+.display-inline-block {display: inline-block;}
 
-.flex-stretch{flex: 1;}
+.flex-stretch{flex: 1 1 auto;}
 .flex-none{flex:none;}
+
+.flex-align-center {align-items: center;}
+.flex-justify-center {justify-content: center;}
+
+.flex-column{flex-direction: column;}
+.flex-wrap{flex-wrap: wrap;}
 
 .container{
 	max-width: 1200px;
@@ -55,6 +68,13 @@ a{
 .overcrop {position: relative;
 	overflow: hidden;}
 
+
+.media-image{
+	max-width: 100%
+	vertical-align: text-bottom;
+}
+
+.hidden {display: none;}
 
 	@media (max-width: 1200px) {
 		.pad {padding-left: 1em; padding-right: 1em;}

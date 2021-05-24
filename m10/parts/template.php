@@ -23,7 +23,7 @@ return $r.<<<HTML
 	<div class="flex-none" style="width:6em;">
 	<a href="product_item.php?id=$o->id" class="display-block">
 		<div class="image-square">
-			<img src="/images/store/$o->main_image" alt="">
+			<img src="/images/store/$o->thumbnail" alt="">
 		</div>
 	</a>
 	</div>

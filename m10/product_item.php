@@ -2,7 +2,13 @@
 require_once "lib/php/functions.php";
 require_once "parts/template.php";
 
-$product = getData("SELECT * FROM `products` WHERE `id` = {$_GET['id']}")[0];
+$product = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `id`=".$_GET['id'])[0];
+
+$images = explode(",", $product->images);
+
+$image_elements = array_reduce($images,function($r, $o){
+	return $r. "<img src='images/store/$o'>";
+})
 
 ?>
 
@@ -27,31 +33,30 @@ $product = getData("SELECT * FROM `products` WHERE `id` = {$_GET['id']}")[0];
 
 		
 		<h2><?= $product->title?></h2>
-		<div class="grid gap xs-small">
+		<div class="grid gap">
 			<div class="col-xs-12 col-md-7">
-				<div class="card-basic">
-					<div class="product-imagemain">
-						<img src="/images/store/<?= $product->thumbnail?>" alt="" class="image-fit">
+				<div class="card soft">
+					<div class="images-main">
+						<img src="/images/store/<?= $product->main_image ?>" >
 					</div>
-					<div class="product-thumbs">
-						<?= 
-							array_reduce(explode(",",$product->images),function($r,$o){
-								return $r."<img src='/images/store/$o' alt=''>";
-							})
+					<div class="images-thumbs">
+						<?= $image_elements ?>
 
-						 ?>
 					</div>
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-5">
-				<form action="product_addtocart.php" class="card-basic card-flat" method="get">
+				<form class="card soft flat" method="post" action="cart_actions.php?action=add-to-cart">
+				
+				<input type="hidden" name="product-id" value="<?= $product->id ?>">
+
 					<div class="card-section">
-						<div class="product-name">
-							<h2><?= $product->title?></h2>
-						</div>
+						<h2 class="product-title"><?= $product->title ?></h2>
+						<div class="product-category"><em><?= $product->category ?></em></div>
+						<div class="product-description"><em><?= $product->description ?></div>
 						<div class="product-price">
-							&dollar;<?= $product->price ?>
-						</div>
+							&dollar;<?= $product->price ?></div>
+						
 					</div>
 					<div class="card-section">
 						<div class="display-flex" style="align-items: center;">
@@ -89,6 +94,7 @@ $product = getData("SELECT * FROM `products` WHERE `id` = {$_GET['id']}")[0];
 		</div>
 
 		<hr class="spacer">
+		
 		<h2>Related Products</h2>
 
 		<div class="grid gap xs-small md-medium product-list">
